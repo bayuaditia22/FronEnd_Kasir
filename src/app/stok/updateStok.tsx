@@ -33,7 +33,6 @@ const EditStok = (stok: Stok) => {
       router.refresh();
       setModal(false);
     } catch (error) {
-      // Tambahkan penanganan pesan kesalahan jika diperlukan
       setIsMutating(false);
       console.error('Error updating data:', error);
     }

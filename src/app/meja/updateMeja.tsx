@@ -30,13 +30,15 @@ const EditMeja = (meja: Meja) => {
       status: status,
     };
     await axios.patch(endpoint, data);
-
-    setNomorMeja("");
-    setKapasitas("");
-    setStatus("");
-    setIsMutating(false);
-    router.refresh();
-    setModal(false);
+    try {
+      await axios.patch(endpoint, data);
+      setIsMutating(false);
+      router.refresh();
+      setModal(false);
+    } catch (error) {
+      setIsMutating(false);
+      console.error('Error updating data:', error);
+    }
   };
   return (
     <div>

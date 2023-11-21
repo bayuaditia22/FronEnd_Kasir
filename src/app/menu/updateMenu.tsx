@@ -30,13 +30,15 @@ const UpdateMenu = (Menu: Menu) => {
     let endpoint = `${API_URL}/menu/${Menu.id}`;
     const data = { jenis_id:jenis_id , nama_menu:nama_menu, harga:harga, image:image, deskripsi:deskripsi};
     await axios.patch(endpoint, data);
-    setJenis_id("");
-    setNamaMenu("");
-    setHarga("");
-    setImage("");
-    setDeskripsi("");
-    router.refresh();
-    setModal(false);
+    try {
+      await axios.patch(endpoint, data);
+      setIsMutating(false);
+      router.refresh();
+      setModal(false);
+    } catch (error) {
+      setIsMutating(false);
+      console.error('Error updating data:', error);
+    }
   };
   return (
     <div>

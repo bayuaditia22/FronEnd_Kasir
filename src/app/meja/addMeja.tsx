@@ -43,7 +43,7 @@ const AddMeja = () => {
 
       <div className="modal">
         <div className="modal-box">
-          <h3 className="font-bold text-lg"> Add New Menu</h3>
+          <h3 className="font-bold text-lg"> Add New Meja</h3>
           <form onSubmit={handleSubmit}>
             <div className="form-control">
               <label className="label font-bold">No Meja</label>

@@ -24,12 +24,15 @@ const EditJenis = (jenis: Jenis) => {
     let endpoint = `${API_URL}/jenis/${jenis.id}`;
     const data = { kategori_id: kategori_id, nama_jenis: nama_jenis };
     await axios.patch(endpoint, data);
-
-    setKategori_id("");
-    setNamaJenis("");
-    setIsMutating(false);
-    router.refresh();
-    setModal(false);
+    try {
+      await axios.patch(endpoint, data);
+      setIsMutating(false);
+      router.refresh();
+      setModal(false);
+    } catch (error) {
+      setIsMutating(false);
+      console.error('Error updating data:', error);
+    }
   };
   return (
     <div>

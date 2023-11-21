@@ -4,38 +4,36 @@ import Link from 'next/link'
 const MainLayout = ({children}:{children: React.ReactNode}) => {
   return (
     <div>
-        <ul>
-            <li>
-                <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/category">Category</Link>
-            </li>
-            <li>
-              <Link href="/jenis">Jenis</Link>
-            </li>
-            <li>
-              <Link href="/menu">Menu</Link>
-            </li>
-            <li>
-              <Link href="/pelanggan">Pelanggan</Link>
-            </li>
-            <li>
-              <Link href="/meja">Meja</Link>
-            </li>
-            <li>
-              <Link href="/pemesanan">Pemesanan</Link>
-            </li>
-            <li>
-              <Link href="/stok">Stok</Link>
-            </li>
-        </ul>
-
-        {children}
-    
+      <ul className="flex">
+        <li className="mr-5">
+          <Link href="/">Home</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/about">About</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/category">Category</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/jenis">Jenis</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/menu">Menu</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/stok">Stok</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/pelanggan">Pelanggan</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/meja">Meja</Link>
+        </li>
+        <li className="mr-5">
+          <Link href="/pemesanan">Pemesanan</Link>
+        </li>
+      </ul>
+      {children}
     </div>
   );
 };
